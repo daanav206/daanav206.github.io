@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="ageVerification" class="overlay">
+        <div class="modal">
+            <h2>Age Verification</h2>
+            <p>Please confirm you are over 18 years old.</p>
+            <button id="confirmAge">I am over 18</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Video Player</h1>
+        <div class="video-container">
+            <video id="videoPlayer" controls>
+                <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="playlist">
+            <h2>Playlist</h2>
+            <ul id="videoList">
+                <!-- Each video item with thumbnail and title will be added dynamically by JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Age verification functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('ageVerification');
+            const confirmButton = document.getElementById('confirmAge');
+            
+            confirmButton.addEventListener('click', function() {
+                overlay.style.display = 'none'; // Hide age verification overlay
+            });
+        });
+    </script>
+</body>
+</html>
